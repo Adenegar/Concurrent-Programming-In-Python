@@ -3,7 +3,7 @@ import time
 import threading
 
 def cpu_bound_work(num):
-    return math.factorial(num + 100000) % 29
+    return math.factorial(num + 100000) // math.factorial(num + 99998) % 29
 
 def run_thread(lock, thread_id):
     # Run a computation and display its result using a lock for safe printing.
