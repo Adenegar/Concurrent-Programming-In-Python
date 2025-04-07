@@ -6,8 +6,9 @@ def cpu_bound_work(num):
     return math.factorial(num + 100000) // math.factorial(num + 99998) % 29
 
 def run_thread(lock, thread_id):
-    # Run a computation and display its result using a lock for safe printing.
+    # Do work
     result = cpu_bound_work(thread_id)
+    # Print result
     lock.acquire()
     try:
         print(f'Thread {thread_id}: Computation result is {result}')
